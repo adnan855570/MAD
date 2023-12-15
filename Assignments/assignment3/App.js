@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Registration from './src/components/Register'
-import Login from './src/components/Login'
-import Form from './src/components/Form'
-import Display from './src/components/Display'
+import RegistrationScreen from './src/components/RegistrationScreen'
+import LoginScreen from './src/components/LoginScreen'
+import FromScreen from './src/components/FromScreen'
+import DisplayScreen from './src/components/DisplayScreen'
 
 const Stack = createStackNavigator();
 
@@ -12,10 +12,10 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Registration">
-        <Stack.Screen name="Registration" component={Registration} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Form" component={Form} />
-        <Stack.Screen name="Display" component={Display} />
+        <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} />
+        <Stack.Screen name="FromScreen" component={FromScreen} />
+        <Stack.Screen name="DisplayScreen" component={DisplayScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

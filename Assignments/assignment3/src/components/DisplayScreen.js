@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const Display = () => {
+const DisplayScreen = () => {
   const [cvData, setCVData] = useState({});
 
   useEffect(() => {
     const fetchCVData = async () => {
       try {
-        // Retrieve CV data from local storage
         const cvDataString = await AsyncStorage.getItem('cvData');
         if (cvDataString) {
           const parsedCVData = JSON.parse(cvDataString);
@@ -20,7 +19,7 @@ const Display = () => {
     };
 
     fetchCVData();
-  }, []); // The empty dependency array ensures this effect runs only once on component mount
+  }, []); 
 
   return (
     <View style={styles.container}>
@@ -52,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Display;
+export default DisplayScreen;
